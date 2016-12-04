@@ -1,6 +1,6 @@
-﻿using MailProgram.Entities.Mails;
+﻿using MailProgram.App.Entities.Mails;
 
-namespace MailProgram.Services
+namespace MailProgram.App.Services
 {
     public interface IMailService
     {

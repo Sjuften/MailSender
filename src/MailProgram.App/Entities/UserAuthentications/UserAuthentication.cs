@@ -1,4 +1,4 @@
-﻿namespace MailProgram.Entities.UserAuthentications
+﻿namespace MailProgram.App.Entities.UserAuthentications
 {
     public class UserAuthentication : IUserAuthentication
     {

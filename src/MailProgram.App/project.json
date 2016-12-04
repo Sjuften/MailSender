@@ -5,7 +5,7 @@
         "emitEntryPoint": true
     },
     "dependencies": {
-"NETCore.MailKit": "1.0.1"
+        "NETCore.MailKit": "1.0.1"
     },
     "frameworks": {
         "netcoreapp1.1": {

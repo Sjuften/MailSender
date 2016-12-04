@@ -1,8 +1,8 @@
-﻿using MailProgram.Entities.Files;
-using MailProgram.Entities.Mails;
+﻿using MailProgram.App.Entities.Files;
+using MailProgram.App.Entities.Mails;
 using MimeKit;
 
-namespace MailProgram.Entities.Protocols.Extensions
+namespace MailProgram.App.Entities.Protocols.Extensions
 {
     public static class MimeMessageExtensions
     {

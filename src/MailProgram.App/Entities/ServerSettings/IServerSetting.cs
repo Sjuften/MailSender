@@ -1,4 +1,4 @@
-﻿namespace MailProgram.Entities.ServerSettings
+﻿namespace MailProgram.App.Entities.ServerSettings
 {
     public interface IServerSetting
     {

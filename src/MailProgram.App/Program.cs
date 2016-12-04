@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using MailProgram.Entities.Files;
-using MailProgram.Entities.Files.Enums;
-using MailProgram.Entities.Mails;
-using MailProgram.Entities.Protocols;
-using MailProgram.Entities.ServerSettings;
-using MailProgram.Entities.UserAuthentications;
-using MailProgram.Services;
+using MailProgram.App.Entities.Files;
+using MailProgram.App.Entities.Files.Enums;
+using MailProgram.App.Entities.Mails;
+using MailProgram.App.Entities.Protocols;
+using MailProgram.App.Entities.ServerSettings;
+using MailProgram.App.Entities.UserAuthentications;
+using MailProgram.App.Services;
 using MimeKit;
 
-namespace MailProgram
+namespace MailProgram.App
 {
     public class Program
     {
