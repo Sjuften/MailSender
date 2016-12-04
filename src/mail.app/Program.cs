@@ -16,7 +16,7 @@ namespace mail.app
         public static void Main(string[] args)
         {
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), "cv.pdf");
-            var user = new UserAuthentication() {Username = "martinbergpetersen", Password = "martinbp88"};
+            var user = new UserAuthentication() {Username = "", Password = ""};
             var settings = new ServerSetting() {Url = "smtp.gmail.com", Port = 587};
             var smtp = new Smtp(settings, user);
             var service = new MimeService(smtp);
@@ -25,9 +25,9 @@ namespace mail.app
                 Message = "I ligner et meget spændnede firma, derfor vil jeg lige smide en uopfordret ansøgning",
                 Recievers = new List<MailboxAddress>()
                 {
-                    new MailboxAddress("bergpetersen@outlook.com")
+                    new MailboxAddress("")
                 },
-                Sender = new MailboxAddress("Martinbergpetersen@gmail.com"),
+                Sender = new MailboxAddress(""),
                 Subject = "Uopfordret ansøgning",
                 File = new Pdfs()
                 {
