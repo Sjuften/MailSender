@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using MailProgram.App.Entities.Files;
+using mail.app.Entities.Files;
 using MimeKit;
 
-namespace MailProgram.App.Entities.Mails
+namespace mail.app.Entities.Mails
 {
     public class Mail : IMail
     {

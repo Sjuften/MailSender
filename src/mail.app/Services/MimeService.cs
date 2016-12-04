@@ -1,8 +1,8 @@
-﻿using MailProgram.App.Entities.Mails;
-using MailProgram.App.Entities.Protocols;
+﻿using mail.app.Entities.Mails;
+using mail.app.Entities.Protocols;
 using MimeKit;
 
-namespace MailProgram.App.Services
+namespace mail.app.Services
 {
     public class MimeService : IMailService
     {

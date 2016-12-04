@@ -1,4 +1,4 @@
-﻿namespace MailProgram.App.Entities.Files.Enums
+﻿namespace mail.app.Entities.Files.Enums
 {
     public enum Format
     {

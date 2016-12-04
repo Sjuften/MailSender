@@ -1,4 +1,4 @@
-﻿namespace MailProgram.App.Entities.ServerSettings
+﻿namespace mail.app.Entities.ServerSettings
 {
     public class ServerSetting :IServerSetting
     {

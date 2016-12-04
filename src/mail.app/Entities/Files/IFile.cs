@@ -1,6 +1,6 @@
-﻿using MailProgram.App.Entities.Files.Enums;
+﻿using mail.app.Entities.Files.Enums;
 
-namespace MailProgram.App.Entities.Files
+namespace mail.app.Entities.Files
 {
     public interface IFile
     {

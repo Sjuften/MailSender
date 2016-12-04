@@ -1,5 +1,6 @@
 using Xunit;
-namespace MailProgram.Test
+
+namespace mail.test
 {
     // see example explanation on xUnit.net website:
     // https://xunit.github.io/docs/getting-started-dotnet-core.html
