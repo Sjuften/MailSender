@@ -1,0 +1,16 @@
+project.lock.json
+bin/
+obj/
+project.fragment.lock.json
+artifacts/
+**/Properties/launchSettings.json
+#RiderC#
+**/.idea
+**/.idea.RestfulApi
+./idea
+*.*.iml
+**/*.sln
+*.sln
+**/*.xproj
+*.xproj
+
