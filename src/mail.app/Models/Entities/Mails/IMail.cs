@@ -7,9 +7,9 @@ namespace mail.app.Models.Entities.Mails
     {
         string Message { get; set; }
         string Subject { get; set; }
+        string Sender { get; set; }
 
         IEnumerable<IFile> Files { get; set; }
         IEnumerable<string> Recievers { get; set; }
-        string Sender { get; set; }
     }
 }

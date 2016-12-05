@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using mail.app.Models.Entities.Files;
 using mail.app.Models.Entities.Protocols;
 using MimeKit;
