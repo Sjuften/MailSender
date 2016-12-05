@@ -1,5 +1,4 @@
-﻿using System;
-using mail.app.Entities.Mails;
+﻿using mail.app.Entities.Mails;
 using mail.app.Entities.Protocols;
 using mail.app.Entities.ServerSettings;
 using mail.app.Entities.UserAuthentications;

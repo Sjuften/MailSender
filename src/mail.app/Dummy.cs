@@ -14,13 +14,13 @@ namespace mail.app
         {
             return new Mail()
             {
-                Message = "I ligner et meget spændnede firma, derfor vil jeg lige smide en uopfordret ansøgning",
+                Message = "Resume",
                 Recievers = new List<string>()
                 {
-                    "bergpetersen@outlook.com"
+                    "example@example.dk"
                 },
-                Sender = "Martin Berg Petersen",
-                Subject = "Uopfordret ansøgning",
+                Sender = "John Smith",
+                Subject = "Resume",
                 Files = new List<IFile>()
                 {
                     new Pdfs()
