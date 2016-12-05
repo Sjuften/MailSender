@@ -9,8 +9,8 @@ namespace mail.app.Entities.Mails
         public string Message { get; set; }
         public string Subject { get; set; }
 
-        public IFile File { get; set; }
-        public List<MailboxAddress> Recievers { get; set; }
-        public MailboxAddress Sender { get; set; }
+        public IEnumerable<IFile> Files { get; set; }
+        public IEnumerable<string> Recievers { get; set; }
+        public string Sender { get; set; }
     }
 }
