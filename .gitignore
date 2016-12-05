@@ -14,4 +14,4 @@ artifacts/
 **/*.xproj
 *.xproj
 cv.pdf
-
+appsettings.json
