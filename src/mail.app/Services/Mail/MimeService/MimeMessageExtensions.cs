@@ -27,10 +27,7 @@ namespace mail.app.Services.Mail.MimeService
 
         public static MimeMessage AddRecievers(this MimeMessage message, IEnumerable<string> recievers)
         {
-            foreach (var reciever in recievers)
-            {
-                message.To.Add(new MailboxAddress(reciever));
-            }
+            foreach (var reciever in recievers){message.To.Add(new MailboxAddress(reciever));}
             return message;
         }
 
