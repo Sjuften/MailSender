@@ -15,3 +15,4 @@ artifacts/
 *.xproj
 cv.pdf
 appsettings.json
+emails

@@ -37,8 +37,7 @@ namespace mail.app
                 {
                     new Pdfs()
                     {
-                        FilePath = filePath,
-                        Format = Format.Pdf
+                        FilePath = filePath
                     }
                 }
             };
