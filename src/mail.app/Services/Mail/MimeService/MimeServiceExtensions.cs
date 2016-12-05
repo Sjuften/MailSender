@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using mail.app.Models.Entities.Files;
 using mail.app.Models.Entities.Protocols;
 using MimeKit;
@@ -9,18 +11,31 @@ namespace mail.app.Services.Mail.MimeService
     {
         public static MimeMessage AttachFiles(this MimeMessage message, IEnumerable<IFile> files, BodyBuilder builder)
         {
-            builder = new BodyBuilder();
-            //With attachfiles, i need to overwrite the text body - so i have attach the message to it
-            OverrideMimeBodyMessage(builder, message.TextBody);
+            var multipart = new Multipart("mixed")
+            {
+                new TextPart("plain") {Text = message.TextBody},
+            };
             foreach (var file in files)
             {
-                builder.Attachments.Add(file.FilePath);
+                var attachment = Create(file);
+
+                multipart.Add(attachment);
             }
-            //Apppend it
-            message.Body = builder.ToMessageBody();
+
+            message.Body = multipart;
             return message;
         }
 
+        private static MimePart Create(IFile file)
+        {
+            return new MimePart("", "")
+            {
+                ContentObject =
+                    new ContentObject(File.OpenRead(file.FilePath), ContentEncoding.Default),
+                ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
+                FileName = Path.GetFileName(file.FilePath)
+            };
+        }
 
         public static MimeMessage AddSender(this MimeMessage message, string sender)
         {

@@ -1,4 +1,4 @@
-using mail.app.Entities.UserAuthentications;
+using mail.app.Models.Entities.UserAuthentications;
 using Xunit;
 
 namespace mail.test

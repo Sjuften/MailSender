@@ -16,12 +16,6 @@ namespace mail.app
 
         public static void Main(string[] args)
         {
-            var emailsPath = Path.Combine(Directory.GetCurrentDirectory(), "emails");
-            var emails = File.OpenText(emailsPath);
-//            foreach (var email in emails)
-//            {
-//
-//            }
             var user = new UserAuthentication();
             var settings = new ServerSetting();
             var service = new MimeService(settings, user);

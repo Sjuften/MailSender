@@ -4,6 +4,9 @@ obj/
 project.fragment.lock.json
 artifacts/
 **/Properties/launchSettings.json
+appsettings.json
+emails
+Attachments
 #RiderC#
 **/.idea
 **/.idea.RestfulApi
@@ -11,8 +14,7 @@ artifacts/
 *.*.iml
 **/*.sln
 *.sln
+
 **/*.xproj
 *.xproj
 cv.pdf
-appsettings.json
-emails

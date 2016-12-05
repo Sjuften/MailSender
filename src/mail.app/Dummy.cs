@@ -7,24 +7,29 @@ namespace mail.app
 {
     public static class Dummy
     {
-        private static string FilePath { get; } = Path.Combine(Directory.GetCurrentDirectory(), "cv.pdf");
+        private static string Image { get; } = Path.Combine(Directory.GetCurrentDirectory(), "Attachments/portrait.jpg")
+            ;
+
+        private static string Cv { get; } = Path.Combine(Directory.GetCurrentDirectory(), "Attachments/cv.pdf");
+        private static IEnumerable<string> Recievers { get; } = File.ReadAllLines("emails.txt");
 
         public static IMail Mail()
         {
             return new Mail()
             {
                 Message = "Resume",
-                Recievers = new List<string>()
-                {
-                    "example@example.dk"
-                },
+                Recievers = Recievers,
                 Sender = "John Smith",
                 Subject = "Resume",
                 Files = new List<IFile>()
                 {
-                    new Pdfs()
+                    new Png()
                     {
-                        FilePath = FilePath
+                        FilePath = Image
+                    },
+                    new Pdf()
+                    {
+                        FilePath = Cv
                     }
                 }
             };
