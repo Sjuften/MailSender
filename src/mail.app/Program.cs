@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using mail.app.Entities.Files;
 using mail.app.Entities.Files.Enums;
