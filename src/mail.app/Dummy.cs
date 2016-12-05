@@ -17,7 +17,7 @@ namespace mail.app
                 Recievers = new List<string>()
                 {
                     "example@example.dk"
-                }
+                },
                 Sender = "John Smith",
                 Subject = "Resume",
                 Files = new List<IFile>()
