@@ -7,14 +7,15 @@ using MimeKit;
 
 namespace mail.app.Services.Mail.MimeService
 {
-    public static class MimeServiceExtensions
+    public static class MimeMessageExtensions
     {
         public static MimeMessage AttachFiles(this MimeMessage message, IEnumerable<IFile> files)
         {
-            return MultiPartCreate().
+            var multipart = MultipartExtensions.MultiPartCreate().
                 AddTextPart(message.TextBody).
-                AttachFiles(files).
-                Build(message);
+                AttachFiles(files);
+            message.Body = multipart;
+            return message;
         }
 
 
@@ -48,44 +49,6 @@ namespace mail.app.Services.Mail.MimeService
         public static void Send(this MimeMessage message, IProtocol protocol)
         {
             protocol.Send();
-        }
-
-        private static Multipart MultiPartCreate()
-        {
-            return new Multipart();
-        }
-
-        private static MimeMessage Build(this Multipart part, MimeMessage message)
-        {
-            message.Body = part;
-            return message;
-        }
-
-        private static Multipart AddTextPart(this Multipart part, string message)
-        {
-            part.Add(new TextPart("plain") {Text = message});
-            return part;
-        }
-
-        private static Multipart AttachFiles(this Multipart part, IEnumerable<IFile> files)
-        {
-            foreach (var file in files)
-            {
-                var attachment = Create(file);
-                part.Add(attachment);
-            }
-            return part;
-        }
-
-        private static MimePart Create(IFile file)
-        {
-            return new MimePart("", "")
-            {
-                ContentObject =
-                    new ContentObject(File.OpenRead(file.FilePath)),
-                ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
-                FileName = Path.GetFileName(file.FilePath)
-            };
         }
     }
 }
