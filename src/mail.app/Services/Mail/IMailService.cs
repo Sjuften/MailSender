@@ -1,6 +1,6 @@
 ﻿using mail.app.Entities.Mails;
 
-namespace mail.app.Services
+namespace mail.app.Services.Mail
 {
     public interface IMailService
     {

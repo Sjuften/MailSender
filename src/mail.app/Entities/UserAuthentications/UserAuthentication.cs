@@ -1,7 +1,4 @@
-﻿using System.IO;
-using Microsoft.Extensions.Configuration;
-
-namespace mail.app.Entities.UserAuthentications
+﻿namespace mail.app.Entities.UserAuthentications
 {
     public class UserAuthentication : IUserAuthentication
     {

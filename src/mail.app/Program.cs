@@ -1,11 +1,7 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using mail.app.Entities.Files;
-using mail.app.Entities.Files.Enums;
-using mail.app.Entities.Mails;
+﻿using System.IO;
 using mail.app.Entities.ServerSettings;
 using mail.app.Entities.UserAuthentications;
-using mail.app.Services;
+using mail.app.Services.Mail.MimeService;
 using Microsoft.Extensions.Configuration;
 
 namespace mail.app
@@ -20,28 +16,16 @@ namespace mail.app
 
         public static void Main(string[] args)
         {
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "cv.pdf");
+            var emailsPath = Path.Combine(Directory.GetCurrentDirectory(), "emails");
+            var emails = File.OpenText(emailsPath);
+//            foreach (var email in emails)
+//            {
+//
+//            }
             var user = new UserAuthentication();
             var settings = new ServerSetting();
             var service = new MimeService(settings, user);
-            var mail = new Mail()
-            {
-                Message = "I ligner et meget spændnede firma, derfor vil jeg lige smide en uopfordret ansøgning",
-                Recievers = new List<string>()
-                {
-                    "bergpetersen@outlook.com"
-                },
-                Sender = "Martin Berg Petersen",
-                Subject = "Uopfordret ansøgning",
-                Files = new List<IFile>()
-                {
-                    new Pdfs()
-                    {
-                        FilePath = filePath
-                    }
-                }
-            };
-            service.Send(mail);
+            service.Send(Dummy.Mail());
         }
     }
 }

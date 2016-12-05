@@ -1,37 +1,37 @@
-﻿using mail.app.Entities.Mails;
+﻿using System;
+using mail.app.Entities.Mails;
 using mail.app.Entities.Protocols;
 using mail.app.Entities.ServerSettings;
 using mail.app.Entities.UserAuthentications;
-using mail.app.Services.Extensions;
 using MimeKit;
 
-namespace mail.app.Services
+namespace mail.app.Services.Mail.MimeService
 {
-
     public class MimeService : IMailService
     {
         private readonly IProtocol _client;
 
-        public MimeMessage MimeMessage;
-        public BodyBuilder Builder;
+        private MimeMessage _mimeMessage;
+        private BodyBuilder _builder;
 
         public MimeService(IServerSetting settings, IUserAuthentication user)
         {
-            MimeMessage = new MimeMessage();
-            Builder = new BodyBuilder();
-
-            _client = new Smtp(settings, user, MimeMessage);
+            _mimeMessage = new MimeMessage();
+            _client = new Smtp(settings, user, _mimeMessage);
         }
 
         public void Send(IMail mail)
         {
-            this.AddMessage(mail.Message)
+            _mimeMessage = DefaultMessage(mail).AttachFiles(mail.Files, _builder);
+            _mimeMessage.Send(_client);
+        }
+
+        public MimeMessage DefaultMessage(IMail mail)
+        {
+            return _mimeMessage.AddMessage(mail.Message)
                 .AddSubject(mail.Subject)
                 .AddSender(mail.Sender)
-                .AddRecievers(mail.Recievers)
-                .AttachFiles(mail.Files)
-                .Build()
-                .Send(_client);
+                .AddRecievers(mail.Recievers);
         }
     }
 }
