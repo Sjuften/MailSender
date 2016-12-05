@@ -21,7 +21,7 @@ namespace mail.app.Services.Mail.MimeService
 
         public void Send(IMail mail)
         {
-            _mimeMessage = DefaultMessage(mail).AttachFiles(mail.Files, _builder);
+            _mimeMessage = DefaultMessage(mail).AttachFiles(mail.Files);
             _mimeMessage.Send(_client);
         }
 

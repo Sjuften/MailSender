@@ -9,7 +9,7 @@ namespace mail.app.Services.Mail.MimeService
 {
     public static class MimeServiceExtensions
     {
-        public static MimeMessage AttachFiles(this MimeMessage message, IEnumerable<IFile> files, BodyBuilder builder)
+        public static MimeMessage AttachFiles(this MimeMessage message, IEnumerable<IFile> files)
         {
             var multipart = new Multipart("mixed")
             {
