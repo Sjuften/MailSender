@@ -1,4 +1,4 @@
-﻿namespace mail.app.Entities.UserAuthentications
+﻿namespace mail.app.Models.Entities.UserAuthentications
 {
     public interface IUserAuthentication
     {

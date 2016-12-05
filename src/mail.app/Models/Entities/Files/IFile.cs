@@ -1,4 +1,4 @@
-﻿namespace mail.app.Entities.Files
+﻿namespace mail.app.Models.Entities.Files
 {
     public interface IFile
     {

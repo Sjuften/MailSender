@@ -1,9 +1,9 @@
-﻿using mail.app.Entities.ServerSettings;
-using mail.app.Entities.UserAuthentications;
+﻿using mail.app.Models.Entities.ServerSettings;
+using mail.app.Models.Entities.UserAuthentications;
 using MailKit.Net.Smtp;
 using MimeKit;
 
-namespace mail.app.Entities.Protocols
+namespace mail.app.Models.Entities.Protocols
 {
     public class Smtp : IProtocol
     {

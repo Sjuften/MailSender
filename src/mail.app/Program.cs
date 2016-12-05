@@ -1,6 +1,6 @@
 ﻿using System.IO;
-using mail.app.Entities.ServerSettings;
-using mail.app.Entities.UserAuthentications;
+using mail.app.Models.Entities.ServerSettings;
+using mail.app.Models.Entities.UserAuthentications;
 using mail.app.Services.Mail.MimeService;
 using Microsoft.Extensions.Configuration;
 

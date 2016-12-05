@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using mail.app.Entities.Files;
-using mail.app.Entities.Mails;
+using mail.app.Models.Entities.Files;
+using mail.app.Models.Entities.Mails;
 
 namespace mail.app
 {
@@ -18,7 +17,7 @@ namespace mail.app
                 Recievers = new List<string>()
                 {
                     "example@example.dk"
-                },
+                }
                 Sender = "John Smith",
                 Subject = "Resume",
                 Files = new List<IFile>()

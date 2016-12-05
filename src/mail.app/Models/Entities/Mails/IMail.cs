@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using mail.app.Entities.Files;
+using mail.app.Models.Entities.Files;
 
-namespace mail.app.Entities.Mails
+namespace mail.app.Models.Entities.Mails
 {
     public interface IMail
     {
