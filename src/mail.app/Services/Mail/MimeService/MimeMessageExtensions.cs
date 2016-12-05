@@ -11,10 +11,9 @@ namespace mail.app.Services.Mail.MimeService
     {
         public static MimeMessage AttachFiles(this MimeMessage message, IEnumerable<IFile> files)
         {
-            var multipart = MultipartExtensions.MultiPartCreate().
+            message.Body = MultipartExtensions.MultiPartCreate().
                 AddTextPart(message.TextBody).
                 AttachFiles(files);
-            message.Body = multipart;
             return message;
         }
 
@@ -27,7 +26,8 @@ namespace mail.app.Services.Mail.MimeService
 
         public static MimeMessage AddRecievers(this MimeMessage message, IEnumerable<string> recievers)
         {
-            foreach (var reciever in recievers){message.To.Add(new MailboxAddress(reciever));}
+            foreach (var reciever in recievers){message.To.Add(new MailboxAddress(reciever));
+            }
             return message;
         }
 
