@@ -11,31 +11,12 @@ namespace mail.app.Services.Mail.MimeService
     {
         public static MimeMessage AttachFiles(this MimeMessage message, IEnumerable<IFile> files)
         {
-            var multipart = new Multipart("mixed")
-            {
-                new TextPart("plain") {Text = message.TextBody},
-            };
-            foreach (var file in files)
-            {
-                var attachment = Create(file);
-
-                multipart.Add(attachment);
-            }
-
-            message.Body = multipart;
-            return message;
+            return MultiPartCreate().
+                AddTextPart(message.TextBody).
+                AttachFiles(files).
+                Build(message);
         }
 
-        private static MimePart Create(IFile file)
-        {
-            return new MimePart("", "")
-            {
-                ContentObject =
-                    new ContentObject(File.OpenRead(file.FilePath), ContentEncoding.Default),
-                ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
-                FileName = Path.GetFileName(file.FilePath)
-            };
-        }
 
         public static MimeMessage AddSender(this MimeMessage message, string sender)
         {
@@ -69,9 +50,42 @@ namespace mail.app.Services.Mail.MimeService
             protocol.Send();
         }
 
-        private static void OverrideMimeBodyMessage(BodyBuilder builder, string message)
+        private static Multipart MultiPartCreate()
         {
-            builder.TextBody = message;
+            return new Multipart();
+        }
+
+        private static MimeMessage Build(this Multipart part, MimeMessage message)
+        {
+            message.Body = part;
+            return message;
+        }
+
+        private static Multipart AddTextPart(this Multipart part, string message)
+        {
+            part.Add(new TextPart("plain") {Text = message});
+            return part;
+        }
+
+        private static Multipart AttachFiles(this Multipart part, IEnumerable<IFile> files)
+        {
+            foreach (var file in files)
+            {
+                var attachment = Create(file);
+                part.Add(attachment);
+            }
+            return part;
+        }
+
+        private static MimePart Create(IFile file)
+        {
+            return new MimePart("", "")
+            {
+                ContentObject =
+                    new ContentObject(File.OpenRead(file.FilePath)),
+                ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
+                FileName = Path.GetFileName(file.FilePath)
+            };
         }
     }
 }
