@@ -7,9 +7,7 @@ namespace mail.app
 {
     public static class Dummy
     {
-        private static string Image { get; } = Path.Combine(Directory.GetCurrentDirectory(), "Attachments/portrait.jpg")
-            ;
-
+        private static string Image { get; } = Path.Combine(Directory.GetCurrentDirectory(), "Attachments/portrait.jpg");
         private static string Cv { get; } = Path.Combine(Directory.GetCurrentDirectory(), "Attachments/cv.pdf");
         private static IEnumerable<string> Recievers { get; } = File.ReadAllLines("emails.txt");
 
@@ -17,10 +15,10 @@ namespace mail.app
         {
             return new Mail()
             {
-                Message = "Resume",
+                Message = "I ser spændende ud, derfor har jeg lavet denne uopfordret ansøgning",
                 Recievers = Recievers,
-                Sender = "John Smith",
-                Subject = "Resume",
+                Sender = "Martin Berg Petersen",
+                Subject = "Uopfordret ansøgning",
                 Files = new List<IFile>()
                 {
                     new Png()

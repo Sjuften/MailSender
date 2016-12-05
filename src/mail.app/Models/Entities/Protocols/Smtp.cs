@@ -20,18 +20,21 @@ namespace mail.app.Models.Entities.Protocols
             _server = settings;
             _user = user;
         }
-
+//TODO Catch errors
         public void Send()
         {
-
             Connect();
-            Authenticate();
-            _client.Send(_mimeMessage);
+            if (_client.IsConnected)
+                Authenticate();
+            if (_client.IsAuthenticated)
+                SendMail();
             Disconnect();
             Dispose();
+
+
         }
 
-        private void Send(int test) => _client.Send(_mimeMessage);
+        private void SendMail() => _client.Send(_mimeMessage);
         private void Connect() => _client.Connect(_server.Url, _server.Port);
         private void Disconnect() => _client.Disconnect(true);
         private void Authenticate() => _client.Authenticate(_user.Username, _user.Password);
