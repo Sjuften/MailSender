@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using mail.app.Files;
+using mail.app.Models.Files;
 using mail.app.Protocols;
 using MimeKit;
 

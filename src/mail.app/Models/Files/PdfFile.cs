@@ -1,6 +1,6 @@
-﻿namespace mail.app.Files
+﻿namespace mail.app.Models.Files
 {
-    public class Pdf : IFile
+    public class PdfFile : IFile
     {
         public string FilePath { get; set; }
     }

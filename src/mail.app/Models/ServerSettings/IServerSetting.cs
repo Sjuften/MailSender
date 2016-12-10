@@ -1,4 +1,4 @@
-﻿namespace mail.app.ServerSettings
+﻿namespace mail.app.Models.ServerSettings
 {
     public interface IServerSetting
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace mail.app.ServerSettings
+namespace mail.app.Models.ServerSettings
 {
     public class ServerSetting :IServerSetting
     {

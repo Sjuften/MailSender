@@ -1,7 +1,7 @@
-﻿using mail.app.Mails;
+﻿using mail.app.Models.Mails;
+using mail.app.Models.ServerSettings;
+using mail.app.Models.UserAuthentications;
 using mail.app.Protocols;
-using mail.app.ServerSettings;
-using mail.app.UserAuthentications;
 using MimeKit;
 
 namespace mail.app.Services.Mail.MimeService

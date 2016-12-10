@@ -1,7 +1,9 @@
-﻿using System.IO;
-using mail.app.ServerSettings;
+﻿using System;
+using System.IO;
+using System.Linq;
+using mail.app.Models.ServerSettings;
+using mail.app.Models.UserAuthentications;
 using mail.app.Services.Mail.MimeService;
-using mail.app.UserAuthentications;
 using Microsoft.Extensions.Configuration;
 
 namespace mail.app
@@ -20,6 +22,8 @@ namespace mail.app
             var settings = new ServerSetting();
             var service = new MimeService(settings, user);
             service.Send(Dummy.Mail());
+            Console.WriteLine("Email send to: " + Dummy.Mail().Recievers.FirstOrDefault());
+
         }
     }
 }

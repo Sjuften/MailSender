@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using mail.app.Files;
+using mail.app.Models.Files;
 using MimeKit;
 
 namespace mail.app.Services.Mail.MimeService

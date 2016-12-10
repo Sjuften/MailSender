@@ -1,4 +1,4 @@
-﻿using mail.app.Mails;
+﻿using mail.app.Models.Mails;
 
 namespace mail.app.Services.Mail
 {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using mail.app.Files;
-using mail.app.Mails;
+using mail.app.Models.Files;
+using mail.app.Models.Mails;
 
 namespace mail.app
 {
@@ -21,11 +21,11 @@ namespace mail.app
                 Subject = "Uopfordret ansøgning",
                 Files = new List<IFile>()
                 {
-                    new Png()
+                    new PngFile()
                     {
                         FilePath = Image
                     },
-                    new Pdf()
+                    new PdfFile()
                     {
                         FilePath = Cv
                     }

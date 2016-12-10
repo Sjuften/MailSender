@@ -1,5 +1,5 @@
-﻿using mail.app.ServerSettings;
-using mail.app.UserAuthentications;
+﻿using mail.app.Models.ServerSettings;
+using mail.app.Models.UserAuthentications;
 using MailKit.Net.Smtp;
 using MimeKit;
 
