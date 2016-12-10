@@ -20,6 +20,7 @@ namespace mail.app.Protocols
             _server = settings;
             _user = user;
         }
+
 //TODO Catch errors
         public void Send()
         {
@@ -30,8 +31,6 @@ namespace mail.app.Protocols
                 SendMail();
             Disconnect();
             Dispose();
-
-
         }
 
         private void SendMail() => _client.Send(_mimeMessage);
