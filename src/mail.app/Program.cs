@@ -1,7 +1,7 @@
 ﻿using System.IO;
-using mail.app.Models.Entities.ServerSettings;
-using mail.app.Models.Entities.UserAuthentications;
+using mail.app.ServerSettings;
 using mail.app.Services.Mail.MimeService;
+using mail.app.UserAuthentications;
 using Microsoft.Extensions.Configuration;
 
 namespace mail.app

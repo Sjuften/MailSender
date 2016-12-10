@@ -1,4 +1,4 @@
-﻿namespace mail.app.Models.Entities.Files
+﻿namespace mail.app.Files
 {
     public class Pdf : IFile
     {

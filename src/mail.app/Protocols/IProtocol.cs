@@ -1,4 +1,4 @@
-﻿namespace mail.app.Models.Entities.Protocols
+﻿namespace mail.app.Protocols
 {
     public interface IProtocol
     {

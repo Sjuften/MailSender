@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using mail.app.Models.Entities.Files;
-using mail.app.Models.Entities.Mails;
+using mail.app.Files;
+using mail.app.Mails;
 
 namespace mail.app
 {
