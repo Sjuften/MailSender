@@ -3,7 +3,7 @@ using mail.app.Models.UserAuthentications;
 using MailKit.Net.Smtp;
 using MimeKit;
 
-namespace mail.app.Protocols
+namespace mail.app.Services.Protocols
 {
     public class Smtp : IProtocol
     {

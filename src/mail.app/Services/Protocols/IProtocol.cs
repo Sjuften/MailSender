@@ -1,4 +1,4 @@
-﻿namespace mail.app.Protocols
+﻿namespace mail.app.Services.Protocols
 {
     public interface IProtocol
     {
