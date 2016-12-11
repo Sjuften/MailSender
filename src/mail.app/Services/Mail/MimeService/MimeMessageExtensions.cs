@@ -9,9 +9,9 @@ namespace mail.app.Services.Mail.MimeService
     {
         public static MimeMessage AttachFiles(this MimeMessage message, IEnumerable<IFile> files)
         {
-            message.Body = MultipartExtensions.MultiPartCreate().
-                AddTextPart(message.TextBody).
-                AttachFiles(files);
+            message.Body = MultipartExtensions.MultiPartCreate()
+                .AddTextPart(message.TextBody)
+                .AttachFiles(files);
             return message;
         }
 
