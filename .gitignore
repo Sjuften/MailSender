@@ -15,6 +15,7 @@ Attachments
 *.*.iml
 **/*.sln
 *.sln
+Dummy.cs
 
 **/*.xproj
 *.xproj
