@@ -31,6 +31,7 @@ namespace mail.app.Services.Protocols
                 SendMail();
             Disconnect();
             Dispose();
+
         }
 
         private void SendMail() => _client.Send(_mimeMessage);
