@@ -16,10 +16,10 @@ namespace mail.app
         {
             return new Mail()
             {
-                Message = "test",
+                Message = "XXX",
                 Recievers = Recievers,
-                Sender = "Martin Berg Petersen",
-                Subject = "Uopfordret ansøgning",
+                Sender = "XXX",
+                Subject = "XXX",
                 Files = new List<IFile>()
                 {
                     new PngFile()
