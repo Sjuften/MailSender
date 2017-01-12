@@ -16,14 +16,10 @@ namespace mail.app
         {
             return new Mail()
             {
-                Message = "Da jeg fandt jeres profil yderst interessant, ville jeg lige smide en uopfordret ansøgning." +
-                          "" +
-                          "" +
-                          " Håber at høre fra jer." +
-                          " Mvh Martin Berg Petersen",
+                Message = "xxx",
                 Recievers = Recievers,
-                Sender = "Martin Berg Petersen",
-                Subject = "Uopfordret ansøgning",
+                Sender = "xxx",
+                Subject = "xxx",
                 Files = new List<IFile>()
                 {
                     new PngFile()
